@@ -3,12 +3,12 @@
 
 #include "hw08.h"
 
+namespace cppclass{
 /// @brief Constructs an empty linked list.
 LinkedList::LinkedList()
         : m_head(nullptr),
           m_tail(nullptr), 
-          m_size(0) {
-}
+          m_size(0) {}
 
 /**
  * @brief Constructs a linked list from an array.
@@ -30,6 +30,7 @@ LinkedList::LinkedList(const int *arr, size_t size)
  *
  * @param src Reference to the linked list to copy from.
  */
+
 LinkedList::LinkedList(const LinkedList &src) : m_size(0){
         Node *src_curr = src.m_head;
         for (int i = 0; i < src.m_size; i++) {
@@ -37,7 +38,7 @@ LinkedList::LinkedList(const LinkedList &src) : m_size(0){
                 src_curr = src_curr->next;
         }
 }
-
+ 
 /**
  * @brief Move constructor.
  *
@@ -201,3 +202,22 @@ LinkedList::Node* LinkedList::at(unsigned int index) const {
  * @return Current size of list.
  */
 size_t LinkedList::get_size() const { return m_size; }
+
+/**
+ * @brief Returns equality between two linked lists
+ *
+ * @return true if all elements in linked list are equal to each other in order and value
+ */
+bool LinkedList::operator==(const LinkedList &other) const {
+    return false;
+}
+
+/**
+ * @brief Returns non-equality between two linked lists
+ *
+ * @return false if all elements in linked list are equal to each other in order and value
+ */
+bool LinkedList::operator!=(const LinkedList &other) const {
+    return false;
+}
+}
