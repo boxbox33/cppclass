@@ -3,6 +3,7 @@
 #include <cstddef>
 
 namespace cppclass {
+  
 class LinkedList {
 public:
         /// @brief Node definition for the linked list.
